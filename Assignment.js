@@ -1,35 +1,37 @@
 // 1a. and 1b.
-let ages = [3, 9, 23, 64, 2, 8, 28, 93];
-
+let ages = [3, 9, 23, 64, 2, 8, 28, 100];
 let lastMinusFirst = (ages[ages.length -1] - ages[0]);
 console.log("1a.&1b. lastMinusFirst is: " + lastMinusFirst); 
 
 // 1c.
 let total = 0;
+let averageAge = 0;
 for (age of ages){
 	total += age;}
-console.log ("1c. Average of all ages in the ages array is: " + (total / ages.length));
+averageAge = total / ages.length;
+console.log ("1c. Average of all ages in the ages array is: " + (averageAge));
 
 // 2a. Find Average Num of Letters per Name
-let firstNames = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
+let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 let nameLength = 0;
-for (name of firstNames){
+let averageLength = 0;
+for (name of names){
 	nameLength += name.length;
+	averageLength = nameLength / names.length;
 }
-//console.log("nameLength is: " + nameLength);
-console.log("2a. Average Number of Letters per name is: " + nameLength / firstNames.length);
+console.log("2a. Average Number of Letters per name is: " + averageLength);
 
 // 2b. Concat all names together with spaces
 namesList = "";
-for (name of firstNames){
+for (name of names){
 	namesList += (name + " ");
 }
 console.log("2b. List of Names is: " + namesList);
 
 // 5. 
 let nameLengths = [];
-for (x = 0; x < firstNames.length; x++){
-	nameLengths[x] = firstNames[x].length;
+for (x = 0; x < names.length; x++){
+	nameLengths[x] = names[x].length;
 }
 console.log("5. nameLengths array is: " + nameLengths);
 
@@ -64,11 +66,13 @@ function sumMoreThanOneHundred(numbersArray){
 		total += x;
 	}
 	if (total > 100){
-		return true;}
+		return true;
+	}
 	else{ 
-		return false;}
+		return false;
+	}
 }
-console.log("9. More than 100?: " + sumMoreThanOneHundred([25,25,25,261]));
+console.log("9. More than 100?: " + sumMoreThanOneHundred([25,25,25,26]));
 
 
 // 10. 
@@ -96,7 +100,8 @@ function firstAvgMoreThanSecond(numbersArrayOne, numbersArrayTwo){
 	let averageTwo = totalTwo / numbersArrayTwo.length;
 
 	if (averageOne > averageTwo){
-		return true;}
+		return true;
+	}
 }
 console.log("11. averageOne is greater than averageTwo? " + firstAvgMoreThanSecond([1,3,5],[0,3,5]));
 
